@@ -15,7 +15,7 @@ const adminRoute = require('./router/admin-router')
 
 
 var corsOptions = {
-    origin: 'http://localhost:5173',
+    origin: 'https://login-logout-phi.vercel.app/',
     optionsSuccessStatus: 200,
 }
 app.use(cors(corsOptions))

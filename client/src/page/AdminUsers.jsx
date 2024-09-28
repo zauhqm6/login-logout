@@ -11,14 +11,14 @@ const AdminUsers = () => {
 
 
   const [users, setUsers] = useState([])
-  const { authToken } = useAuth()
+  const { authToken, API } = useAuth()
   // toast.success('authToken:', authToken)
   // console.log(authToken:', authToken); // Add this to check if authToken is set
 
 
   const getAllUsersData = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/admin/users', {
+      const response = await fetch('${API}/api/admin/users', {
         method: "GET",
         headers: {
           Authorization: authToken
@@ -47,7 +47,7 @@ const AdminUsers = () => {
       // eslint-disable-next-line no-async-promise-executor
       new Promise(async (resolve, reject) => {
         try {
-          const response = await fetch(`http://localhost:5000/api/admin/users/delete/${id}`, {
+          const response = await fetch(`${API}/api/admin/users/delete/${id}`, {
             method: "DELETE",
             headers: {
               Authorization: authToken

@@ -7,11 +7,11 @@ import "react-loading-skeleton/dist/skeleton.css";
 const AdminContact = () => {
     const [contact, setContacts] = useState([]);
     const [loading, setLoading] = useState(true); // Loading state
-    const { authToken } = useAuth();
+    const { authToken, API } = useAuth();
 
     const getAllContacts = async () => {
         try {
-            const response = await fetch("http://localhost:5000/api/admin/contacts", {
+            const response = await fetch(`${API}/api/admin/contacts`, {
                 method: "GET",
                 headers: {
                     Authorization: authToken,
@@ -33,7 +33,7 @@ const AdminContact = () => {
     const deleteUser = async (id) => {
         try {
             const response = await fetch(
-                `http://localhost:5000/api/admin/contacts/delete/${id}`,
+                `${API}/api/admin/contacts/delete/${id}`,
                 {
                     method: "DELETE",
                     headers: {

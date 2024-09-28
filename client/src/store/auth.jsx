@@ -18,6 +18,8 @@ export const AuthProvider = ({ children }) => {
 
     const isLoggedIn = !!token;
 
+    const API = "http://localhost:5000"
+
     const logout = () => {
         setToken("");
         localStorage.removeItem('token');
@@ -29,7 +31,7 @@ export const AuthProvider = ({ children }) => {
         if (!token) return;
 
         try {
-            const response = await fetch(`http://localhost:5000/api/auth/user`, {
+            const response = await fetch(`${API}/api/auth/user`, {
                 method: "GET",
                 headers: {
                     Authorization: authToken
@@ -57,7 +59,7 @@ export const AuthProvider = ({ children }) => {
     const getServices = async () => {
 
         try {
-            const response = await fetch(`http://localhost:5000/api/data/service`, {
+            const response = await fetch(`${API}/api/data/service`, {
                 method: "GET",
 
             });
@@ -85,7 +87,7 @@ export const AuthProvider = ({ children }) => {
     }, [token]); // Dependency array includes `token`
 
     return (
-        <AuthContext.Provider value={{ isLoggedIn, storeTokenInLs, logout, user, services, authToken, isLoading }}>
+        <AuthContext.Provider value={{ isLoggedIn, storeTokenInLs, logout, user, services, authToken, isLoading, API }}>
             {children}
         </AuthContext.Provider>
     );

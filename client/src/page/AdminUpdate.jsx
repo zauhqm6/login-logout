@@ -14,13 +14,13 @@ const AdminUpdate = () => {
 
     const params = useParams()
 
-    const { authToken } = useAuth()
+    const { authToken, API } = useAuth()
 
     // eslint-disable-next-line no-unused-vars
     const getSingleUserData = async (id) => {
 
         try {
-            const response = await fetch(`http://localhost:5000/api/admin/users/${params.id}`, {
+            const response = await fetch(`${API}/api/admin/users/${params.id}`, {
                 method: "GET",
                 headers: {
                     Authorization: authToken
@@ -60,7 +60,7 @@ const AdminUpdate = () => {
         e.preventDefault()
 
         try {
-            const response = await fetch(`http://localhost:5000/api/admin//users/update/${params.id}`, {
+            const response = await fetch(`${API}/api/admin//users/update/${params.id}`, {
                 method: "PATCH",
                 headers: {
                     "Content-Type": "application/json",
