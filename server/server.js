@@ -31,7 +31,9 @@ app.use(errorMmiddleware)
 
 
 
-
+app.get('/', (req, res) => {
+    res.json("hello")
+})
 
 
 connectDB().then(() => {
