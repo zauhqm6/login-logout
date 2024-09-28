@@ -18,7 +18,7 @@ export const AuthProvider = ({ children }) => {
 
     const isLoggedIn = !!token;
 
-    const API = "http://localhost:5000"
+    const API = "https://login-logout-dyl6.vercel.app/"
 
     const logout = () => {
         setToken("");
