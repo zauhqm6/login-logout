@@ -18,7 +18,7 @@ export const AuthProvider = ({ children }) => {
 
     const isLoggedIn = !!token;
 
-    const API = "https://login-logout-dyl6.vercel.app/"
+    const API = "https://login-logout-txkv.onrender.com/"
 
     const logout = () => {
         setToken("");
