@@ -15,7 +15,7 @@ const adminRoute = require('./router/admin-router')
 
 
 var corsOptions = {
-    origin: 'https://login-logout-3jsjjqouz-zauhqm6s-projects.vercel.app/',
+    origin: 'https://login-logout-xnwb.vercel.app/',
     optionsSuccessStatus: 200,
 }
 app.use(cors(corsOptions))
